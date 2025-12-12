@@ -1,4 +1,4 @@
-﻿import telebot
+import telebot
 import requests
 import time
 import sys
@@ -18,7 +18,7 @@ GREEN_API_BASE_URL_SEND = os.getenv("GREEN_API_BASE_URL_SEND")
 GREEN_API_BASE_URL_FILE = os.getenv("GREEN_API_BASE_URL_FILE")
 
 # Проверка наличия обязательных переменных
-if not all([BOT_TOKEN, TARGET_CHAT_ID, GREEN_API_BASE_URL]):
+if not all([BOT_TOKEN, TARGET_CHAT_ID, GREEN_API_BASE_URL_SEND, GREEN_API_BASE_URL_FILE]):
     print("!!! ОШИБКА КОНФИГУРАЦИИ: Проверьте, заполнены ли BOT_TOKEN, TARGET_CHAT_ID и GREEN_API_BASE_URL в файле .env")
     sys.exit(1)
 
@@ -208,4 +208,3 @@ if __name__ == '__main__':
             print("\nПрограмма остановлена пользователем.")
 
             sys.exit(0)
-
