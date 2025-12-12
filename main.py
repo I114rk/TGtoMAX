@@ -61,7 +61,7 @@ def sendMaxMessage(text):
     
     payload = {
         "chatId": TARGET_CHAT_ID, 
-        "message": text_to_send,  
+        "message": text_to_send,
         "customPreview": {
             "title": "Новое текстовое сообщение из Telegram-канала" 
         }
@@ -208,3 +208,4 @@ if __name__ == '__main__':
             print("\nПрограмма остановлена пользователем.")
 
             sys.exit(0)
+
