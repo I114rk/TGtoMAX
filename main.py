@@ -14,7 +14,8 @@ load_dotenv()
 # Получение настроек из переменных окружения
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 TARGET_CHAT_ID = os.getenv("TARGET_CHAT_ID")
-GREEN_API_BASE_URL = os.getenv("GREEN_API_BASE_URL")
+GREEN_API_BASE_URL_SEND = os.getenv("GREEN_API_BASE_URL_SEND")
+GREEN_API_BASE_URL_FILE = os.getenv("GREEN_API_BASE_URL_FILE")
 
 # Проверка наличия обязательных переменных
 if not all([BOT_TOKEN, TARGET_CHAT_ID, GREEN_API_BASE_URL]):
@@ -22,8 +23,8 @@ if not all([BOT_TOKEN, TARGET_CHAT_ID, GREEN_API_BASE_URL]):
     sys.exit(1)
 
 # Формирование полных URL Green-API
-GREEN_API_SEND_MESSAGE_URL = f"{GREEN_API_BASE_URL}/sendMessage"
-GREEN_API_SEND_FILE_UPLOAD_URL = f"{GREEN_API_BASE_URL}/sendFileByUpload"
+GREEN_API_SEND_MESSAGE_URL = f"{GREEN_API_BASE_URL_SEND}"
+GREEN_API_SEND_FILE_UPLOAD_URL = f"{GREEN_API_BASE_URL_FILE}"
 
 # Инициализация бота
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -205,4 +206,5 @@ if __name__ == '__main__':
             time.sleep(10)
         except KeyboardInterrupt:
             print("\nПрограмма остановлена пользователем.")
+
             sys.exit(0)
